@@ -27,7 +27,9 @@
                 show-value
                 @description-value="descripcionValue"
               />
+              zzzz
               {{ description }}
+              zzzz
             </v-card-text>
           </v-card>
         </v-dialog>

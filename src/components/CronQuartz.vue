@@ -103,6 +103,9 @@ import DaysCron from "@/components/DaysCron.vue";
 import MonthsCron from "@/components/MonthsCron.vue";
 import YearsCron from "@/components/YearsCron.vue";
 import cronstrue from "cronstrue/i18n";
+import 'cronstrue/locales/en';
+import 'cronstrue/locales/ru';
+
 import cron from "cron-validate";
 const presetCronValidate = {
   override: {
