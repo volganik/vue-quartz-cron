@@ -14,10 +14,10 @@
               <v-btn icon dark @click="dialog = false">
                 <v-icon>mdi-close</v-icon>
               </v-btn>
-              <v-toolbar-title>Settings</v-toolbar-title>
+              <v-toolbar-title>Настройка</v-toolbar-title>
               <v-spacer></v-spacer>
               <v-toolbar-items>
-                <v-btn dark text @click="dialog = false">Close</v-btn>
+                <v-btn dark text @click="dialog = false">Закрыть</v-btn>
               </v-toolbar-items>
             </v-toolbar>
 
@@ -25,11 +25,12 @@
               <CronQuartz
                 v-model="cronExpression"
                 show-value
+                locale="ru"
                 @description-value="descripcionValue"
               />
-              zzzz
+              ----====
               {{ description }}
-              zzzz
+              ====----
             </v-card-text>
           </v-card>
         </v-dialog>
@@ -57,7 +58,7 @@ export default {
     openDialog() {
       this.dialog = true;
       this.incremental++;
-      this.cronExpression = "* * * ? * " + this.incremental + " *";
+      this.cronExpression = "* * * ? * * *";
     }
   }
 };

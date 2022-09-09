@@ -2,11 +2,11 @@
   <v-card>
     <v-card-title>
       <v-icon large left>mdi-clock-outline</v-icon>
-      <span class="title headline mb-1">Al segundo</span>
+      <span class="title headline mb-1">Секунды</span>
     </v-card-title>
     <v-card-text>
       <v-radio-group @change="resetSecondData" v-model="secondOption.key">
-        <v-radio label="Cada segundo" value="everySecond"></v-radio>
+        <v-radio label="Каждую секунду" value="everySecond"></v-radio>
         <v-radio value="everySecondAt">
           <template v-slot:label>
             <div>
@@ -16,8 +16,8 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="everyAnySecond"
                     @input="everyAnySecondFn"
-                    prefix="Cada"
-                    suffix="segundo(s)"
+                    prefix="Каждую"
+                    suffix="секунду"
                     item-text="secondLabel"
                     item-value="secondValue"
                     :items="secondsList"
@@ -31,7 +31,7 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="startSecond"
                     @input="startSecondFn"
-                    prefix="comenzando en el segundo"
+                    prefix="начиная с секунды"
                     item-text="secondLabel"
                     item-value="secondValue"
                     :items="secondsIndexList"
@@ -53,8 +53,8 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="secondsSpecific"
                     @change="secondsSpecificFn"
-                    prefix="Segundo(s) "
-                    suffix="especifico(s)"
+                    prefix="В указанные "
+                    suffix="секунды"
                     item-text="secondLabel"
                     item-value="secondValue"
                     :items="secondsIndexList"
@@ -77,8 +77,8 @@
                     class="pt-0 pb-0 mt-0"
                     @input="betweenSecondFn"
                     v-model="betweenSecond"
-                    prefix="Cada segundo entre"
-                    suffix="segundo(s)"
+                    prefix="Каждую секунду между"
+                    suffix="секундой"
                     item-text="secondLabel"
                     item-value="secondValue"
                     :items="secondsIndexList"
@@ -93,8 +93,8 @@
                     class="pt-0 pb-0 mt-0"
                     @input="andSecondFn"
                     v-model="andSecond"
-                    prefix="y"
-                    suffix="segundo(s)"
+                    prefix="и"
+                    suffix="секундой"
                     item-text="secondLabel"
                     item-value="secondValue"
                     :items="secondsIndexList"

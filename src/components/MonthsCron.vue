@@ -4,11 +4,11 @@
       <v-icon large left>
         mdi-calendar-month
       </v-icon>
-      <span class="title headline mb-1">En el mes</span>
+      <span class="title headline mb-1">Месяцы</span>
     </v-card-title>
     <v-card-text>
       <v-radio-group @change="resetMonthData" v-model="monthOption.key">
-        <v-radio label="Cada mes" value="everyMonth"></v-radio>
+        <v-radio label="Каждый месяц" value="everyMonth"></v-radio>
         <v-radio value="everyMonthAt">
           <template v-slot:label>
             <div>
@@ -18,8 +18,8 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="everyAnyMonth"
                     @input="everyAnyMonthFn"
-                    prefix="Cada"
-                    suffix="mes(s)"
+                    prefix="Каждый"
+                    suffix="месяц"
                     item-text="monthValue"
                     item-value="monthValue"
                     :items="monthsIndexList"
@@ -33,7 +33,7 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="startMonth"
                     @input="startMonthFn"
-                    prefix="comenzando en el mes"
+                    prefix="начиная с месяца"
                     item-text="monthLabel"
                     item-value="monthValue"
                     :items="monthsIndexList"
@@ -55,8 +55,8 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="monthsSpecific"
                     @change="monthsSpecificFn"
-                    prefix="Mese(s) "
-                    suffix="especifico(s)"
+                    prefix="В указанные"
+                    suffix="месяцы"
                     item-text="monthLabel"
                     item-value="monthValue"
                     :items="monthsIndexList"
@@ -77,8 +77,8 @@
                     class="pt-0 pb-0 mt-0"
                     @input="betweenMonthFn"
                     v-model="betweenMonth"
-                    prefix="Cada mes entre"
-                    suffix="mes(s)"
+                    prefix="Каждый месяц, начиная с"
+                    suffix=""
                     item-text="monthLabel"
                     item-value="monthValue"
                     :items="monthsIndexList"
@@ -93,8 +93,8 @@
                     class="pt-0 pb-0 mt-0"
                     @input="andMonthFn"
                     v-model="andMonth"
-                    prefix="y"
-                    suffix="mes(s)"
+                    prefix="по"
+                    suffix="месяц"
                     item-text="monthLabel"
                     item-value="monthValue"
                     :items="monthsIndexList"
@@ -255,29 +255,29 @@ export default {
       for (let m = 0; m < 12; m++) {
         let indexMonthLabel = "" + m;
         if (m == 0) {
-          indexMonthLabel = "Enero";
+          indexMonthLabel = "Январь";
         } else if (m == 1) {
-          indexMonthLabel = "Febrero";
+          indexMonthLabel = "Февраль";
         } else if (m == 2) {
-          indexMonthLabel = "Marzo";
+          indexMonthLabel = "Март";
         } else if (m == 3) {
-          indexMonthLabel = "Abril";
+          indexMonthLabel = "Апрель";
         } else if (m == 4) {
-          indexMonthLabel = "Mayo";
+          indexMonthLabel = "Май";
         } else if (m == 5) {
-          indexMonthLabel = "Junio";
+          indexMonthLabel = "Июнь";
         } else if (m == 6) {
-          indexMonthLabel = "Julio";
+          indexMonthLabel = "Июль";
         } else if (m == 7) {
-          indexMonthLabel = "Agosto";
+          indexMonthLabel = "Август";
         } else if (m == 8) {
-          indexMonthLabel = "Septiembre";
+          indexMonthLabel = "Сентябрь";
         } else if (m == 9) {
-          indexMonthLabel = "Octubre";
+          indexMonthLabel = "Октябрь";
         } else if (m == 10) {
-          indexMonthLabel = "Noviembre";
+          indexMonthLabel = "Ноябрь";
         } else if (m == 11) {
-          indexMonthLabel = "Diciembre";
+          indexMonthLabel = "Декабрь";
         }
         let itemMonth = {
           monthLabel: indexMonthLabel,

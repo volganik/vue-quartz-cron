@@ -4,11 +4,11 @@
       <v-icon large left>
         mdi-clock-outline
       </v-icon>
-      <span class="title headline mb-1">En el minuto</span>
+      <span class="title headline mb-1">Минуты</span>
     </v-card-title>
     <v-card-text>
       <v-radio-group @change="resetMinuteData" v-model="minuteOption.key">
-        <v-radio label="Cada minuto" value="everyMinute"></v-radio>
+        <v-radio label="Каждую минуту" value="everyMinute"></v-radio>
         <v-radio value="everyMinuteAt">
           <template v-slot:label>
             <div>
@@ -18,8 +18,8 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="everyAnyMinute"
                     @input="everyAnyMinuteFn"
-                    prefix="Cada"
-                    suffix="minuto(s)"
+                    prefix="Кажудую"
+                    suffix="минуту"
                     item-text="minuteLabel"
                     item-value="minuteValue"
                     :items="minutesList"
@@ -33,7 +33,7 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="startMinute"
                     @input="startMinuteFn"
-                    prefix="comenzando en el minuto"
+                    prefix="начиная с минуты"
                     item-text="minuteLabel"
                     item-value="minuteValue"
                     :items="minutesIndexList"
@@ -55,8 +55,8 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="minutesSpecific"
                     @change="minutesSpecificFn"
-                    prefix="Minutos(s) "
-                    suffix="especifico(s)"
+                    prefix="В указанные"
+                    suffix="минуты"
                     item-text="minuteLabel"
                     item-value="minuteValue"
                     :items="minutesIndexList"
@@ -77,8 +77,8 @@
                     class="pt-0 pb-0 mt-0"
                     @input="betweenMinuteFn"
                     v-model="betweenMinute"
-                    prefix="Cada minuto entre"
-                    suffix="minuto(s)"
+                    prefix="Каждую минуту с"
+                    suffix="минуты"
                     item-text="minuteLabel"
                     item-value="minuteValue"
                     :items="minutesIndexList"
@@ -93,8 +93,8 @@
                     class="pt-0 pb-0 mt-0"
                     @input="andMinuteFn"
                     v-model="andMinute"
-                    prefix="y"
-                    suffix="minuto(s)"
+                    prefix="по"
+                    suffix="минуту"
                     item-text="minuteLabel"
                     item-value="minuteValue"
                     :items="minutesIndexList"

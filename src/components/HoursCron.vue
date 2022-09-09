@@ -4,11 +4,11 @@
       <v-icon large left>
         mdi-calendar-clock
       </v-icon>
-      <span class="title headline mb-1">En la hora</span>
+      <span class="title headline mb-1">Часы</span>
     </v-card-title>
     <v-card-text>
       <v-radio-group @change="resetHourData" v-model="hourOption.key">
-        <v-radio label="Cada hora" value="everyHour"></v-radio>
+        <v-radio label="Каждый час" value="everyHour"></v-radio>
         <v-radio value="everyHourAt">
           <template v-slot:label>
             <div>
@@ -18,8 +18,8 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="everyAnyHour"
                     @input="everyAnyHourFn"
-                    prefix="Cada"
-                    suffix="hora(s)"
+                    prefix="Каждый"
+                    suffix="час"
                     item-text="hourLabel"
                     item-value="hourValue"
                     :items="hoursList"
@@ -33,7 +33,7 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="startHour"
                     @input="startHourFn"
-                    prefix="comenzando en la hora"
+                    prefix="начиная с часа"
                     item-text="hourLabel"
                     item-value="hourValue"
                     :items="hoursIndexList"
@@ -55,8 +55,8 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="hoursSpecific"
                     @change="hoursSpecificFn"
-                    prefix="Horas(s) "
-                    suffix="especifica(s)"
+                    prefix="В указанный"
+                    suffix="час(ы)"
                     item-text="hourLabel"
                     item-value="hourValue"
                     :items="hoursIndexList"
@@ -77,8 +77,8 @@
                     class="pt-0 pb-0 mt-0"
                     @input="betweenHourFn"
                     v-model="betweenHour"
-                    prefix="Cada hora entre"
-                    suffix="hora(s)"
+                    prefix="Каждый час с"
+                    suffix="часа"
                     item-text="hourLabel"
                     item-value="hourValue"
                     :items="hoursIndexList"
@@ -93,8 +93,8 @@
                     class="pt-0 pb-0 mt-0"
                     @input="andHourFn"
                     v-model="andHour"
-                    prefix="y"
-                    suffix="hora(s)"
+                    prefix="по"
+                    suffix="час"
                     item-text="hourLabel"
                     item-value="hourValue"
                     :items="hoursIndexList"

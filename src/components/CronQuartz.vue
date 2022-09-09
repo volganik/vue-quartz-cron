@@ -103,8 +103,6 @@ import DaysCron from "@/components/DaysCron.vue";
 import MonthsCron from "@/components/MonthsCron.vue";
 import YearsCron from "@/components/YearsCron.vue";
 import cronstrue from "cronstrue/i18n";
-import 'cronstrue/locales/en';
-import 'cronstrue/locales/ru';
 
 import cron from "cron-validate";
 const presetCronValidate = {
@@ -125,7 +123,8 @@ export default {
   props: {
     value: { type: String },
     showDescription: { default: false, type: Boolean },
-    showValue: { default: false, type: Boolean }
+    showValue: { default: false, type: Boolean },
+    locale: { default: "en", type: String },
   },
   components: {
     SecondsCron,
@@ -215,7 +214,7 @@ export default {
       const cronResult = cron(cronExpression, presetCronValidate);
       if (cronResult.isValid()) {
         this.descriptionValue = cronstrue.toString(cronExpression, {
-          locale: "es",
+          locale: this.locale,
           dayOfWeekStartIndexZero: false
         });
       } else {

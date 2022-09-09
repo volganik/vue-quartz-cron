@@ -4,11 +4,11 @@
       <v-icon large left>
         mdi-calendar-week
       </v-icon>
-      <span class="title headline mb-1">Del año</span>
+      <span class="title headline mb-1">Годы</span>
     </v-card-title>
     <v-card-text>
       <v-radio-group @change="resetYearData" v-model="yearOption.key">
-        <v-radio label="Cada año" value="everyYear"></v-radio>
+        <v-radio label="Каждый год" value="everyYear"></v-radio>
         <v-radio value="everyYearAt">
           <template v-slot:label>
             <div>
@@ -18,8 +18,8 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="everyAnyYear"
                     @input="everyAnyYearFn"
-                    prefix="Cada"
-                    suffix="año(s)"
+                    prefix="Каждый"
+                    suffix="год"
                     item-text="yearLabel"
                     item-value="yearValue"
                     :items="yearsList"
@@ -33,7 +33,7 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="startYear"
                     @input="startYearFn"
-                    prefix="comenzando en el año"
+                    prefix="начиная с"
                     item-text="yearLabel"
                     item-value="yearValue"
                     :items="yearsIndexList"
@@ -55,8 +55,8 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="yearsSpecific"
                     @change="yearsSpecificFn"
-                    prefix="Años(s) "
-                    suffix="especifico(s)"
+                    prefix="Указанные"
+                    suffix="года"
                     item-text="yearLabel"
                     item-value="yearValue"
                     :items="yearsIndexList"
@@ -77,8 +77,8 @@
                     class="pt-0 pb-0 mt-0"
                     @input="betweenYearFn"
                     v-model="betweenYear"
-                    prefix="Cada año entre"
-                    suffix="año(s)"
+                    prefix="Каждый год между"
+                    suffix=""
                     item-text="yearLabel"
                     item-value="yearValue"
                     :items="yearsIndexList"
@@ -93,8 +93,8 @@
                     class="pt-0 pb-0 mt-0"
                     @input="andYearFn"
                     v-model="andYear"
-                    prefix="y"
-                    suffix="año(s)"
+                    prefix="и"
+                    suffix="годом"
                     item-text="yearLabel"
                     item-value="yearValue"
                     :items="yearsIndexList"

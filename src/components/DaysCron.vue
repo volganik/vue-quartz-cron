@@ -4,11 +4,11 @@
       <v-icon large left>
         mdi-calendar-range
       </v-icon>
-      <span class="title headline mb-1">Del día</span>
+      <span class="title headline mb-1">Дни</span>
     </v-card-title>
     <v-card-text>
       <v-radio-group @change="resetDayData" v-model="dayOption.key">
-        <v-radio label="Cada día" value="everyDay"></v-radio>
+        <v-radio label="Каждый день" value="everyDay"></v-radio>
         <v-radio value="everyDayAt">
           <template v-slot:label>
             <div>
@@ -18,8 +18,8 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="everyAnyDay"
                     @input="everyAnyDayFn"
-                    prefix="Cada"
-                    suffix="día(s)"
+                    prefix="Каждый"
+                    suffix="день"
                     item-text="dayLabel"
                     item-value="dayValue"
                     :items="daysOfWeekList"
@@ -33,7 +33,7 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="startDay"
                     @input="startDayFn"
-                    prefix="comenzando en el día"
+                    prefix="начиная с"
                     item-text="dayLabel"
                     item-value="dayValue"
                     :items="daysOfWeekIndexList"
@@ -55,8 +55,8 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="everyAnyDayOfMonth"
                     @input="everyAnyDayOfMonthFn"
-                    prefix="Cada"
-                    suffix="día(s)"
+                    prefix="Каждый"
+                    suffix="день"
                     item-text="dayLabel"
                     item-value="dayValue"
                     :items="daysIndexOfMonthList"
@@ -70,8 +70,8 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="startDayOfMonth"
                     @input="startDayOfMonthFn"
-                    prefix="comenzando en el día"
-                    suffix="del mes"
+                    prefix="начиная с"
+                    suffix="дня месяца"
                     item-text="dayLabel"
                     item-value="dayValue"
                     :items="daysIndexOfMonthList"
@@ -93,8 +93,8 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="daysSpecific"
                     @change="daysSpecificFn"
-                    prefix="Día(s)"
-                    suffix="de la semana"
+                    prefix="По указанным"
+                    suffix="дням недели"
                     item-text="dayLabel"
                     item-value="dayValue"
                     :items="daysOfWeekIndexList"
@@ -118,8 +118,8 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="daysOfMonthSpecific"
                     @change="daysOfMonthSpecificFn"
-                    prefix="Día(s) número"
-                    suffix="del mes"
+                    prefix="По указанным"
+                    suffix="дням месяца"
                     item-text="dayLabel"
                     item-value="dayValue"
                     :items="daysIndexOfMonthList"
@@ -140,7 +140,7 @@
                     class="pt-0 pb-0 mt-0"
                     @input="betweenDayFn"
                     v-model="betweenDay"
-                    prefix="Cada"
+                    prefix="Каждый день с"
                     item-text="dayLabel"
                     item-value="dayValue"
                     :items="daysOfWeekIndexList"
@@ -154,7 +154,7 @@
                     class="pt-0 pb-0 mt-0"
                     @input="andDayFn"
                     v-model="andDay"
-                    prefix="a"
+                    prefix="по"
                     item-text="dayLabel"
                     item-value="dayValue"
                     :items="daysOfWeekIndexList"
@@ -167,9 +167,9 @@
             </div>
           </template>
         </v-radio>
-        <v-radio label="El ultimo día del mes" value="lastDayOfMonth" />
+        <v-radio label="Последний день месяца" value="lastDayOfMonth" />
         <v-radio
-          label="El ultimo día de la semana del mes"
+          label="Последний будний день недели месяца"
           value="lastWeekdayOfMonth"
         />
         <v-radio value="lastDaySpecificOfWeekOfMonth">
@@ -181,8 +181,8 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="lastDaySpecificOfWeekOfMonth"
                     @input="lastDaySpecificOfWeekOfMonthFn"
-                    prefix="El último"
-                    suffix="del mes"
+                    prefix="Последний"
+                    suffix="месяца"
                     item-text="dayLabel"
                     item-value="dayValue"
                     :items="daysOfWeekIndexList"
@@ -204,7 +204,8 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="beforeEndOfMonth"
                     @input="beforeEndOfMonthFn"
-                    suffix="día(s) antes del último día del mes"
+                    prefix="За"
+                    suffix="дня до конца месяца"
                     item-text="dayLabel"
                     item-value="dayValue"
                     :items="daysIndexOfMonthList"
@@ -226,8 +227,8 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="nearestWeekdayOfMonth"
                     @input="nearestWeekdayOfMonthFn"
-                    prefix="Día de la semana más próximo al día número"
-                    suffix="del mes"
+                    prefix="Ближайший будний день"
+                    suffix="числа месяца"
                     item-text="dayLabel"
                     item-value="dayValue"
                     :items="daysIndexOfMonthList"
@@ -249,7 +250,7 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="weekdays"
                     @input="weekdaysFn"
-                    prefix="El"
+                    prefix="В"
                     item-text="dayLabel"
                     item-value="dayValue"
                     :items="weekdaysPerMonthList"
@@ -263,7 +264,7 @@
                     class="pt-0 pb-0 mt-0"
                     v-model="daysOfMonth"
                     @input="daysOfMonthFn"
-                    suffix="del mes"
+                    suffix="месяца"
                     item-text="dayLabel"
                     item-value="dayValue"
                     :items="daysOfWeekIndexList"
@@ -614,19 +615,19 @@ export default {
       for (let d = 0; d < 7; d++) {
         let indexDayLabel = "" + d;
         if (d == 0) {
-          indexDayLabel = "Domingo";
+          indexDayLabel = "Воскресенье";
         } else if (d == 1) {
-          indexDayLabel = "Lunes";
+          indexDayLabel = "Понедельник";
         } else if (d == 2) {
-          indexDayLabel = "Martes";
+          indexDayLabel = "Вторник";
         } else if (d == 3) {
-          indexDayLabel = "Miercoles";
+          indexDayLabel = "Среда";
         } else if (d == 4) {
-          indexDayLabel = "Jueves";
+          indexDayLabel = "Четверг";
         } else if (d == 5) {
-          indexDayLabel = "Viernes";
+          indexDayLabel = "Пятница";
         } else if (d == 6) {
-          indexDayLabel = "Sabado";
+          indexDayLabel = "Суббота";
         }
         let itemDay = {
           dayLabel: indexDayLabel,
