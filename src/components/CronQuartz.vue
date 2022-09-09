@@ -1,50 +1,98 @@
 <template>
   <v-card tile height="auto">
     <v-card-title v-if="showDescription" class="primary white--text">
-      <v-icon large left color="white">mdi-text-recognition</v-icon>
       <span class="title headline mb-1">{{ descriptionValue }}</span>
     </v-card-title>
     <v-card-subtitle v-if="showValue" class="primary white--text">
-      <v-icon small left color="white">mdi-regex</v-icon>
-      <span class="title headline mb-1 text-decoration-underline">{{
-        value
-      }}</span>
+        <span class="title headline mb-1 text-decoration-underline">{{ value  }}</span>
     </v-card-subtitle>
+
     <v-card-text class="cardText">
-      <v-row>
+
+  <v-tabs
+      v-model="tab"
+      background-color="deep-purple accent-4"
+      centered
+      dark
+      icons-and-text
+    >
+ 
+   <v-tabs-slider></v-tabs-slider>
+
+      <v-tab href="#tab-1">Секунды</v-tab>
+      <v-tab href="#tab-2">Минуты</v-tab>
+      <v-tab href="#tab-3">Часы</v-tab>
+      <v-tab href="#tab-4">Дни</v-tab>
+      <v-tab href="#tab-5">Месяцы</v-tab>
+      <v-tab href="#tab-6">Годы</v-tab>
+
+  </v-tabs>
+
+ <v-tabs-items v-model="tab">
+      <v-tab-item value="tab-1">
+        <v-card flat>
         <v-col cols="12" sm="6" md="6" lg="6" xl="6">
           <SecondsCron v-model="secondsCron" />
         </v-col>
+        </v-card>
+      </v-tab-item>
+    
+
+      <v-tab-item value="tab-2">
+        <v-card flat>
         <v-col cols="12" sm="6" md="6" lg="6" xl="6">
           <MinutesCron v-model="minutesCron" />
         </v-col>
-      </v-row>
-      <v-row>
+        </v-card>
+      </v-tab-item>
+
+
+      <v-tab-item value="tab-3">
+        <v-card flat>
         <v-col cols="12" sm="12" md="12" lg="12" xl="12">
           <HoursCron v-model="hoursCron" />
         </v-col>
-      </v-row>
-      <v-row>
+                </v-card>
+      </v-tab-item>
+
+
+      <v-tab-item value="tab-4">
+        <v-card flat>
         <v-col cols="12" sm="12" md="12" lg="12" xl="12">
           <DaysCron v-model="daysCron" />
         </v-col>
-      </v-row>
-      <v-row>
+                </v-card>
+      </v-tab-item>
+
+
+      <v-tab-item value="tab-5">
+        <v-card flat>
         <v-col cols="12" sm="6" md="6" lg="6" xl="6">
           <MonthsCron v-model="monthsCron" />
         </v-col>
+                </v-card>
+      </v-tab-item>
+
+
+      <v-tab-item value="tab-6">
+        <v-card flat>
         <v-col cols="12" sm="6" md="6" lg="6" xl="6">
           <YearsCron v-model="yearsCron" />
         </v-col>
-      </v-row>
+                </v-card>
+      </v-tab-item>
+
+
+</v-tabs-items>
+
     </v-card-text>
   </v-card>
 </template>
 <style scoped>
 .cardText {
   overflow: auto;
-  max-height: 400px;
-  min-height: 400px;
+  max-height: 600px;
+  min-height: 600px;
 }
 </style>
 <script>
@@ -85,6 +133,7 @@ export default {
     YearsCron
   },
   data: () => ({
+    tab: null,
     descriptionValue: null,
     cronExpression: null,
     secondsCron: "*",

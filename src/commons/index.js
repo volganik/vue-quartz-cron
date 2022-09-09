@@ -19,7 +19,7 @@ const cronExpressionToText = (cronExpression) => {
     let expresionData = {
       value: cronExpression,
       description: cronstrue.toString(cronExpression, {
-        locale: "es",
+        locale: "ru",
         dayOfWeekStartIndexZero: false
       })
     };
